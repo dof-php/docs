@@ -1,0 +1,43 @@
+{
+    "pdf": {
+        "fontSize": 12,
+        "footerTemplate": null,
+        "headerTemplate": null,
+        "margin": {
+            "bottom": 36,
+            "left": 62,
+            "right": 62,
+            "top": 36
+        },
+        "pageNumbers": false,
+        "paperSize": "a4"
+    },
+    "plugins": [
+        "expandable-chapters",
+        "splitter",
+        "code",
+        "atoc",
+        "toc",
+        "anchors",
+        "versions-select",
+        "-sharing"
+    ],
+    "pluginsConfig": {
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
+        },
+        "versions": {
+            "options": [
+                {
+                    "value": "/docs/v1/zh-CN",
+                    "text": "1.x"
+                },
+                {
+                    "value": "/docs/v2/zh-CN",
+                    "text": "2.x"
+                }
+            ]
+        }
+    }
+}

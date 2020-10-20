@@ -1,0 +1,31 @@
+{
+    "plugins": [
+        "expandable-chapters",
+        "highlight",
+        "ace",
+        "splitter",
+        "code",
+        "atoc",
+        "anchors",
+        "versions-select",
+        "-sharing"
+    ],
+    "pluginsConfig": {
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
+        },
+        "versions": {
+            "options": [
+                {
+                    "value": "/docs/v2/zh-CN",
+                    "text": "2.x"
+                },
+                {
+                    "value": "/docs/v1/zh-CN",
+                    "text": "1.x"
+                }
+            ]
+        }
+    }
+}
