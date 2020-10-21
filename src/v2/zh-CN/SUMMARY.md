@@ -1,11 +1,14 @@
 # Summary
 
+* [CHANGELOG](CHANGELOG.md)
+
 ## 基础
 
 * [DOF - 快速开始](quick-start/README.md)
     * [特点](quick-start/features.md)
     * [安装](quick-start/installation.md)
     * [目录结构](quick-start/structure.md)
+    * [功能模块](quick-start/modules.md)
 
 * [Web](web/README.md)
     * [端口](web/port.md)
@@ -93,5 +96,4 @@
 
 ----
 
-* [CHANGELOG](CHANGELOG.md)
 * [关于本文档](README.md)

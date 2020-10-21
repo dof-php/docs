@@ -25,7 +25,7 @@ function switchPath(path) {
 - 安装 GitBook：
 
 ``` shell
-npm install gitbook -g
+npm install gitbook-cli -g
 ```
 
 - 选择要预览的语言目录，比如 `zh-CN`，运行 GitBook web 服务：
