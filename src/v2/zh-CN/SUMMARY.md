@@ -1,14 +1,12 @@
 # Summary
 
-* [CHANGELOG](CHANGELOG.md)
-
-## 基础
-
 * [DOF - 快速开始](quick-start/README.md)
     * [特点](quick-start/features.md)
     * [安装](quick-start/installation.md)
     * [目录结构](quick-start/structure.md)
     * [功能模块](quick-start/modules.md)
+
+## 基础
 
 * [Web](web/README.md)
     * [端口](web/port.md)
@@ -16,6 +14,13 @@
     * [包装器](web/wrapper.md)
     * [数据组装](web/data-assemble.md)
     * [路由注解](web/annotation.md)
+
+* [命令行](cli/README.md)
+    * [领域自定义](cli/user.md)
+    * [终端](cli/console.md)
+    * [CMD 注解](cli/annotation.md)
+    * [框架自带](cli/framework.md)
+    * [DSL - CLIA](cli/clia.md)
 
 * [配置](config/README.md)
     * [环境变量](config/env.md)
@@ -26,7 +31,7 @@
     * [如何获取配置](config/read-api.md)
     * [配置注入接口](config/update-api.md)
 
-## 深入
+## 深入 
 
 * [核心概念](concept/README.md)
     * [生命周期](concept/lifecycle.md)
@@ -40,13 +45,6 @@
     * [数据组装器](concept/assembler.md)
     * [事件](concept/event.md)
     * [队列](concept/queue.md)
-
-* [命令行](cli/README.md)
-    * [领域自定义](cli/user.md)
-    * [终端](cli/console.md)
-    * [CMD 注解](cli/annotation.md)
-    * [框架自带](cli/framework.md)
-    * [DSL - CLIA](cli/clia.md)
 
 * [组件](component/README.md)
     * [日志](component/logging.md)
@@ -96,4 +94,6 @@
 
 ----
 
+* [CHANGELOG](CHANGELOG.md)
+* [LIVE](quick-start/live.md)
 * [关于本文档](README.md)
