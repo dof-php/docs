@@ -98,6 +98,26 @@ cd /path/to/dof-project
 dof --set-root /path/to/dof-project-1/ version
 ```
 
+## Docker 搭建测试开发环境
+
+```
+docker run \
+-e VIRTUAL_HOST=app1.docker \
+-h app1.docker \
+-d --rm=true -p8000:80 \
+--name app1.docker \
+-v /path/to/app1:/var/www/html \
+--link mysql5.7.26 some/php7:latest
+
+docker pull mysql:5.7.26
+docker pull redis:5.0.5
+docker pull memcached:1.5.16
+
+docker run --name mysql5.7.26 -e MYSQL_ROOT_PASSWORD=123456 -d -p3306:3306 mysql:5.7.26
+docker run --name redis5.0.5 -p6379:6379 -d redis:5.0.5
+docker run --name mem1.5.16 -p11211:11211 -m 64 -d memcached:1.5.16
+```
+
 ## FAQ
 
 - Composer 下载慢
@@ -115,3 +135,7 @@ composer config repo.packagist composer https://packagist.laravel-china.org
 > ~dof-php 尚处于开发早期，尚未在 GitHub 发布正式版本，因此直接使用 `composer create-project dof-php/dof` 会报这个错误，指定安装 `dev-master` 的代码即可。~
 
 > See: <https://stackoverflow.com/questions/33915523/packagist-laravel-package-composer-could-not-find-package>
+
+- Docker MySQL root 账号用不了？
+
+检查是否你的环境使用 docker mysql 之前安装过还没停用进程。

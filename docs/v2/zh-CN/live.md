@@ -2,7 +2,7 @@
 
 - 人生苦短 希望 DOF 用户能够早点下班
 
-- Get shit done quickly and elegantly!
+- Get shit done quickly and elegantly
 
 - 用一种好方法解决好一件事情
 
@@ -19,7 +19,9 @@
 
 > 配置的灵活与自由有时候是要付出代价的。
 
-- 将 DOF 设计成一个标准，本身没有太多的实现，但是可以统一模块。
+- 做标准 做规范 做协议
+
+> 将 DOF 设计成一个标准，本身没有太多的实现，但是可以挂载很多实现了 DOF 风格的模块。
 
 ## TODO
 

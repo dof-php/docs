@@ -5,6 +5,7 @@
     * [安装](quick-start/installation.md)
     * [目录结构](quick-start/structure.md)
     * [功能模块](quick-start/modules.md)
+    * [2.x 更新日志](quick-start/CHANGELOG.md)
 
 ## 基础
 
@@ -94,6 +95,4 @@
 
 ----
 
-* [CHANGELOG](CHANGELOG.md)
-* [LIVE](quick-start/live.md)
 * [关于本文档](README.md)

@@ -37,3 +37,18 @@ php dof version
 # 查看 Dof 版本原始计数
 php dof version --raw
 ```
+
+### 版本命名格式
+
+软件版本主要指的是功能演进的里程碑。版本命名上采用如下格式：
+
+```
+[major].[minor].[release].[hotfix]
+```
+
+- major: 大版本
+- minor: 小版本
+- release: 发布版本
+- hotfix: 补丁版本 
+
+说明：BUG 修复是针对某几个确定的版本的补丁版本，即 hotfix 是针对 major.minor.release 版本的修复。
