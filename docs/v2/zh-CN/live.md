@@ -23,6 +23,10 @@
 
 > 将 DOF 设计成一个标准，本身没有太多的实现，但是可以挂载很多实现了 DOF 风格的模块。
 
+- 从各个方面考虑框架设计
+
+> 后端开发、前端开发、移动开发、架构、运维、大数据、技术管理、产品、运营、测试、效率
+
 ## TODO
 
 - PHP 原生操作抽象层
@@ -47,6 +51,38 @@ php dof vendor.install --all
 php dof vendor.remove --all
 ```
 
+## 1.x -> 2.x 函数名/类名替换常用命令
+
+```
+# 删除所有日志文件
+find var -type f -iname '*.log' -exec rm -rf {} \;
+
+# 删除所有编译文件
+find var -type f -iname '*.compile' -exec rm -rf {} \;
+
+# 搜索指定目录下所有文件中包含特定字符串并替换
+grep -rIl --exclude-dir="\.git" --exclude=".*" DOFS domain | xargs sed -i 's/DOFS/DOF/g'
+find src \( ! -regex '.*/\..*' \) -type f | xargs sed -i 's/DOFS/DOF/g'
+
+# 忽略搜索二进制文件
+grep -rIl --exclude-dir="\.git" --exclude=".*" DOFS domain | xargs sed -i 's/DOFS/DOF/g'
+
+# demos
+grep -riIl --exclude-dir="\.git" --exclude="*.log" 'notify' .
+find . -iname "*.md" -not -path "./node_modules/*" -type f | xargs sed -i 's/Dof/DOF/g'
+grep -rIn --exclude-dir="node_modules" Dof .
+grep -rIn --exclude-dir="\.git" --exclude=".*" objectname .
+grep -rIn --exclude-dir="\.git" --exclude=".*" Reflect:: .
+grep -rIl --exclude-dir="\.git" --exclude=".*" 'Dof\\Framework' src | xargs sed -i 's/Dof\\Framework/DOF/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" __CLASS__ . | xargs sed -i 's/__CLASS__/static::class/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" excp . | xargs sed -i 's/excp/err/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" ERR:: . | xargs sed -i 's/ERR::/\\DOF\\ERR::/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" DOFRR:: . | xargs sed -i 's/DOFRR::/\\DOF\\ERR::/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" Kernel::formatCompileFile . | xargs sed -i 's/Kernel::formatCompileFile/self::formatCompileFile/g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" '\\DOF\\' . | xargs sed -i 's/\\DOF\\//g'
+grep -rIl --exclude-dir="\.git" --exclude=".*" 'GWT::' . | xargs sed -i 's/GWT::/$gwt->/g'
+```
+
 ## FAQ
 
 - 为什么把所有领域的私有配置文件移动到项目目录的 `/etc` 目录？
@@ -66,3 +102,10 @@ php dof vendor.remove --all
 - 创建了很多 Exception 类文件？
 
 请使用 Exceptor + Err 来处理异常和用户错误。可以极大地减少 Exception 类文件数量。
+
+## 实现参考
+
+- HTTP Response: https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/Response.php
+- HTTP Redirect:
+	- https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/RedirectResponse.php
+	- https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/Tests/RedirectResponseTest.php
