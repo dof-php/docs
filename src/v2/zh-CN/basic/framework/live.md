@@ -107,10 +107,3 @@ grep -rIl --exclude-dir="\.git" --exclude=".*" 'GWT::' . | xargs sed -i 's/GWT::
 - 创建了很多 Exception 类文件？
 
 请使用 Exceptor + Err 来处理异常和用户错误。可以极大地减少 Exception 类文件数量。
-
-## 实现参考
-
-- HTTP Response: https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/Response.php
-- HTTP Redirect:
-	- https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/RedirectResponse.php
-	- https://github.com/symfony/symfony/blob/4.4/src/Symfony/Component/HttpFoundation/Tests/RedirectResponseTest.php
