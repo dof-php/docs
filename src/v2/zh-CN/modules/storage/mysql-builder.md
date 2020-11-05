@@ -23,8 +23,26 @@
 可用于 `where` 查询时候通过类属性名而不是硬编码表字段，使得代码在表字段发生变化时无需做任何改动。
 
 ``` php
-// 获取 ORM 属性 createdAt 对应的表字段名
-$this->column('createdAt');
+// 获取 ORM 属性 isDeleted 对应的表字段名
+$column = $this->column('isDeleted');
+
+// 将转换过的字段名用于 where 条件
+$builder->where($column, 0);
+```
+
+#### `rawWhere` - 原始 SQL 作为一个 Where 条件
+
+``` php
+$builder->rawWhere("`id` % 5 = 1");
+
+// select * from user where (id % 5 = 1);
+```
+
+#### `zero` - 判断若干个字段是否为数字 `0`
+
+``` php
+$builder->zero('is_disabled', 'is_deleted');
+// select * from user where is_disabled = 0 and is_deleted = 0;
 ```
 
 #### 使用闭包处理复杂查询
@@ -75,4 +93,4 @@ $builder-where($this->column('status', 1))->ids();
 $builder-where($this->column('status'), 1)->sql(true)->count();
 ```
 
-返回结果将类似于：`select count(*) as total from user where status = 1`。
+构造的 SQL 将类似于：`select count(*) as total from user where status = 1`。

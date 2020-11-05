@@ -148,7 +148,7 @@ namespace Domain\User\Http\Port\V1;
 use Domain\User\Service\Application\UpdateUserService;
 
 /**
- * @Author(cjli@dofphp)
+ * @Author(me@dof.php)
  * @Version(v1)
  * @Route(users)
  * @MimeOut(json)

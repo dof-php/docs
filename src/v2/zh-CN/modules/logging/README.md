@@ -4,7 +4,7 @@
 
 ``` php
 $console->logger(function ($logger) {
-    $logger->setPostfix('cjli'); // 记录到 /var/log-USER-cjli/ 目录下
+    $logger->setPostfix('foo'); // 记录到 /var/log-USER-foo/ 目录下
 })->trace('xxxx');
 
 $console->logger()->debug('yyyy'); // 记录到 /var/log-USER/ 目录下
